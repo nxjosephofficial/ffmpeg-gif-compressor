@@ -9,8 +9,8 @@ Example: to reduce file.mp4 or file.gif and save output as file-compressed.gif
 
 file.mp4 __or__ file.gif
 file-compressed.gif
-...
 
+...
 ```
 
 ### Requirements:
