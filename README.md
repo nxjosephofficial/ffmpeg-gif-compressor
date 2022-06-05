@@ -7,7 +7,7 @@ Example: to reduce file.mp4 or file.gif and save output as file-compressed.gif
 ```
 ./script.new
 
-file.mp4 (or) file.gif
+file.gif
 file-compressed.gif
 
 ...
