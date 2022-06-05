@@ -30,3 +30,7 @@ just give execute permission with that command below:
 ```
 chmod +x /path/to/script.new
 ```
+and run with:
+```
+./script.new
+```
