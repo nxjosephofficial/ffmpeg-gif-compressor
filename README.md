@@ -5,7 +5,7 @@ script will ask you first for input file name, secondly output file name. If you
 
 Example: commands for reduce file.gif and save output as file-compressed.gif
 ```
-./script.new
+./reducer
 
 file.gif
 file-compressed.gif
@@ -28,9 +28,9 @@ sudo pacman -S ffmpeg
 ### How to run:
 just give execute permission with that command below:
 ```
-chmod +x /path/to/script.new
+chmod +x /path/to/reducer
 ```
 and run with:
 ```
-./script.new
+./reducer
 ```
