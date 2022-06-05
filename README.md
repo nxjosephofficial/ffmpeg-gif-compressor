@@ -6,9 +6,11 @@ script will ask you first for input file name, secondly output file name. If you
 Example: to reduce file.mp4 or file.gif and save output as file-compressed.gif
 ```
 ./script.new
+
 file.mp4 __or__ file.gif
 file-compressed.gif
 ...
+
 ```
 
 ### Requirements:
