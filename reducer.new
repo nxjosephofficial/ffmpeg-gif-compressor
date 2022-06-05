@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# This is a ffmpeg gif size reducer script.
+# https://superuser.com/questions/1049606/reduce-generated-gif-size-using-ffmpeg
+
+read var1 # input file's name
+read var2 # output file's name
+# then
+rm palette.png # remove palette.png if exist.
+ffmpeg -y -i "$var1" -vf palettegen palette.png
+ffmpeg -y -i "$var1" -i palette.png -filter_complex paletteuse -r 10 -s 320x480 "$var2"
+rm palette.png # remove palette.png
