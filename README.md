@@ -12,3 +12,9 @@ ffmpeg for pacman:
 ```
 sudo pacman -S ffmpeg
 ```
+
+### How to run:
+just give execute permission with that command below:
+```
+chmod +x /path/to/script.new
+```
