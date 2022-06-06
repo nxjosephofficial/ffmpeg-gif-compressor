@@ -8,5 +8,5 @@ read var2 # output file's name
 # then
 rm palette.png # remove palette.png if exist.
 ffmpeg -y -i "$var1" -vf palettegen palette.png
-ffmpeg -y -i "$var1" -i palette.png -filter_complex paletteuse -r 10 -s 320x480 "$var2"
+ffmpeg -y -i "$var1" -i palette.png -filter_complex paletteuse -r 10 -s 320x480 "$var2" # -r means rate, here is 10. # -s means output screen size.
 rm palette.png # remove palette.png
