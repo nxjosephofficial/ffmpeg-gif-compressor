@@ -15,7 +15,5 @@ read var4 # output screen size
 if [ -f "palette.png" ]; then
     rm palette.png
 fi
-# then
-rm palette.png # remove palette.png if exist.
 ffmpeg -y -i "$var1" -vf palettegen palette.png
 ffmpeg -y -i "$var1" -i palette.png -filter_complex paletteuse -r "$var3" -s "$var4" "$var2"
