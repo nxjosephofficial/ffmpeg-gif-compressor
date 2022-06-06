@@ -3,10 +3,19 @@
 # This is a ffmpeg gif size reducer script.
 # https://superuser.com/questions/1049606/reduce-generated-gif-size-using-ffmpeg
 
+echo 'type input file name'
 read var1 # input file's name
+echo 'type output file name'
 read var2 # output file's name
+echo 'type output frame rate'
+read var3 # output frame rate
+echo 'type output screen size, e.g. 320x320'
+read var4 # output screen size
+# then remove old palette.png if exist.
+if [ -f "palette.png" ]; then
+    rm palette.png
+fi
 # then
 rm palette.png # remove palette.png if exist.
 ffmpeg -y -i "$var1" -vf palettegen palette.png
-ffmpeg -y -i "$var1" -i palette.png -filter_complex paletteuse -r 10 -s 320x480 "$var2" # -r means rate, here is 10. # -s means output screen size.
-rm palette.png # remove palette.png
+ffmpeg -y -i "$var1" -i palette.png -filter_complex paletteuse -r "$var3" -s "$var4" "$var2"
