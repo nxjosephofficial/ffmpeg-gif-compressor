@@ -1,19 +1,28 @@
 #!/usr/bin/env bash
-
-# This is a ffmpeg gif size reducer script.
-# https://superuser.com/questions/1049606/reduce-generated-gif-size-using-ffmpeg
-
-echo 'type input file name'
-read var1 # input file's name
-echo 'type output file name'
-read var2 # output file's name
+printf "Do you want to reduce size of gif or mp4?\n"
+printf "gif\nmp4\n"
+read filetype
+if [ "$filetype" == "mp4" ]; then
+echo 'type input file name without extension'
+read video_input
+echo 'type output file name without extension'
+read video_output
+echo 'select video quality (CRF): 24 between 30. lower CRF values correspond to higher bitrates'
+read video_quality
+ffmpeg -i "$video_input"."$filetype" -vcodec libx265 -crf "$video_quality" "$video_output"."$filetype"
+elif [ "$filetype" == "gif" ]; then
+echo 'type input file name without extension'
+read gif_input # input file's name
+echo 'type output file name without extension'
+read gif_output # output file's name
 echo 'type output frame rate'
-read var3 # output frame rate
+read gif_framerate # output frame rate
 echo 'type output screen size, e.g. 320x320'
-read var4 # output screen size
-# then remove old palette.png if exist.
+read gif_screensize # output screen size
+# remove old palette.png if exist.
 if [ -f "palette.png" ]; then
     rm palette.png
 fi
-ffmpeg -y -i "$var1" -vf palettegen palette.png
-ffmpeg -y -i "$var1" -i palette.png -filter_complex paletteuse -r "$var3" -s "$var4" "$var2"
+ffmpeg -y -i "$gif_input"."$filetype" -vf palettegen palette.png
+ffmpeg -y -i "$gif_input"."$filetype" -i palette.png -filter_complex paletteuse -r "$gif_framerate" -s "$gif_screensize" "$gif_output"."$filetype"
+fi
