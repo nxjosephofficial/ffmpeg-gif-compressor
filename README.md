@@ -1,17 +1,5 @@
 # ffmpeg-gif-compressor
-This is a shell script that reduces original gif's size with ffmpeg.
-
-script will ask you first for input file name, secondly output file name. If you review script's code you can understand more.
-
-Example: commands for reduce file.gif and save output as file-compressed.gif
-```
-./reducer
-
-file.gif
-file-compressed.gif
-
-...
-```
+This is a shell script that reduces original gif's or mp4's size with ffmpeg.
 
 ### Requirements:
 - ffmpeg
